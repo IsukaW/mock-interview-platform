@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mock Interview Platform
+
+## Overview
+
+This application is a comprehensive mock interview platform designed to help candidates prepare for technical interviews. It provides a realistic interview environment with customizable scenarios, real-time feedback, and performance analytics.
+
+## Features
+
+- **Interactive Interview Sessions**: Practice with simulated technical interviews
+- **Multiple Interview Types**: Choose from coding challenges, system design questions, behavioral interviews, etc.
+- **Real-time Feedback**: Get immediate feedback on your answers
+- **Performance Analytics**: Track your progress over time
+- **Customizable Scenarios**: Practice with different difficulty levels and interview formats
+- **User Authentication**: Secure login and user profile management
+
+## Tech Stack
+
+- **Frontend**:
+  - React.js
+  - TypeScript
+  - Shadcn UI components
+  - React Hook Form for form management
+
+- **Backend**:
+  - [Your backend technology - e.g., Node.js, Express, etc.]
+  - [Your database - e.g., MongoDB, PostgreSQL, etc.]
+
+- **Deployment**:
+  - [Your deployment platform - e.g., Vercel, Netlify, etc.]
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js (version 16.x or higher)
+- npm or yarn
+- [Any other dependencies]
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone [your-repository-url]
+   cd mock-interview-platform
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables
+   ```
+   Create a .env file based on .env.example
+   ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`
+
+## Project Structure
+
+```
+mock-interview-platform/
+├── components/           # UI components
+├── pages/                # Application pages
+├── public/               # Static assets
+├── styles/               # Global styles
+├── lib/                  # Utility functions
+├── hooks/                # Custom React hooks
+└── [Other directories]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Component Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### FormField Component
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The FormField component is used for consistent form input styling across the application:
 
-## Learn More
+```tsx
+<FormField
+  control={form.control}
+  name="username"
+  label="Username"
+  placeholder="Enter your username"
+  type="text"
+/>
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Your contribution guidelines]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+[Your license information]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Your contact information]
