@@ -22,11 +22,10 @@ This application is a comprehensive mock interview platform designed to help can
   - React Hook Form for form management
 
 - **Backend**:
-  - [Your backend technology - e.g., Node.js, Express, etc.]
-  - [Your database - e.g., MongoDB, PostgreSQL, etc.]
+  - 
 
 - **Deployment**:
-  - [Your deployment platform - e.g., Vercel, Netlify, etc.]
+  - 
 
 ## Getting Started
 
