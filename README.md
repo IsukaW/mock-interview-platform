@@ -22,10 +22,11 @@ This application is a comprehensive mock interview platform designed to help can
   - React Hook Form for form management
 
 - **Backend**:
-  - 
+  - Node.js
+  - FireBase
 
 - **Deployment**:
-  - 
+  - Vercel
 
 ## Getting Started
 
