@@ -22,16 +22,17 @@ This application is a comprehensive mock interview platform designed to help can
   - React Hook Form for form management
 
 - **Backend**:
-  - 
+  - Node.js
+  - FireBase
 
 - **Deployment**:
-  - 
+  - Vercel
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 16.x or higher)
+- Node.js (version 15.x or higher)
 - npm or yarn
 - [Any other dependencies]
 
