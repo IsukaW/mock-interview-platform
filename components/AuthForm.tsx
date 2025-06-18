@@ -6,11 +6,13 @@ import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
 import { Form} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
 import Link from "next/dist/client/link"
 import { toast } from "sonner"
 import FormField from "./FormField"
 import { useRouter } from "next/navigation"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "@/firebase/client"
+import { signIn, signUp } from "@/lib/actions/auth.action"
 
 
 const authFormSchema = (type: FormType) => {
@@ -37,14 +39,45 @@ const AuthForm = ({type}:{ type: FormType}) => {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       if (type === "sign-up") {
+        const { name, email, password } = values;
+
+        const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+
+        const result =  await signUp({
+          uid: userCredentials.user.uid,
+          name: name!,
+          email,
+          password,
+        })
+
+        if (!result.success) {
+          toast.error(result.message);
+          return;
+        }
+
         // Handle sign-up logic here
         console.log("Sign Up Values:", values);
         toast.success("Account created successfully!");
         router.push("/sign-in"); // Redirect to sign-in page after successful sign-up
       }else if (type === "sign-in") {
+
+        const { email, password } = values;
+        const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+
+        const idToken = await userCredentials.user.getIdToken();
+
+        if (!idToken) {
+          toast.error("Failed to sign in. Please try again.");
+          return;
+        }
+
+        await signIn({
+          email, idToken
+        })
+
         // Handle sign-in logic here
         console.log("Sign In Values:", values);
         toast.success("Signed in successfully!");
